@@ -47,7 +47,7 @@ while True:
         ymin, ymax = min(yList), max(yList)
         bbox = xmin, ymin, xmax, ymax
         cv.rectangle(img, (xmin - 20, ymin - 20), (xmax + 20, ymax + 20), (0, 255, 0), 2)
-    if len(listLM) != 0:
+    if listLM:
         xm, ym = listLM[8][1:]
         xc, yc = listLM[4][1:]
         fingers = []

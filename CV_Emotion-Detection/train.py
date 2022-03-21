@@ -1,5 +1,5 @@
 from keras.applications import MobileNet
-from keras.models import Sequential,Model 
+from keras.models import Sequential,Model
 from keras.layers import Dense,Dropout,Activation,Flatten,GlobalAveragePooling2D
 from keras.layers import Conv2D,MaxPooling2D,ZeroPadding2D
 from keras.layers.normalization import BatchNormalization
@@ -18,7 +18,7 @@ for layer in MobileNet.layers:
 
 # Let's print our layers
 for (i,layer) in enumerate(MobileNet.layers):
-    print(str(i),layer.__class__.__name__,layer.trainable)
+    print(i, layer.__class__.__name__, layer.trainable)
 
 def addTopModelMobileNet(bottom_model, num_classes):
     """creates the top or head of the model that will be 

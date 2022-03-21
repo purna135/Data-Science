@@ -17,10 +17,10 @@ cap = cv2.VideoCapture(0)
 
 
 
+labels = []
 while True:
     # Grab a single frame of video
     ret, frame = cap.read()
-    labels = []
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     faces = face_classifier.detectMultiScale(gray,1.3,5)
 
@@ -34,7 +34,6 @@ while True:
             roi = roi_gray.astype('float')/255.0
             roi = img_to_array(roi)
             roi = np.expand_dims(roi,axis=0)
-
         # make a prediction on the ROI, then lookup the class
 
             preds = classifier.predict(roi)[0]

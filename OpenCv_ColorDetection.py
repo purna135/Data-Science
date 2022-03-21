@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 webcam = cv2.VideoCapture(0)
-while (1):
+while 1:
     _, imageFrame = webcam.read()
     hsvFrame = cv2.cvtColor(imageFrame, cv2.COLOR_BGR2HSV)
     red_lower = np.array([136, 87, 111], np.uint8)
@@ -28,7 +28,7 @@ while (1):
                                            cv2.RETR_TREE,
                                            cv2.CHAIN_APPROX_SIMPLE)
 
-    for pic, contour in enumerate(contours):
+    for contour in contours:
         area = cv2.contourArea(contour)
         if (area > 300):
             x, y, w, h = cv2.boundingRect(contour)
@@ -43,7 +43,7 @@ while (1):
                                            cv2.RETR_TREE,
                                            cv2.CHAIN_APPROX_SIMPLE)
 
-    for pic, contour in enumerate(contours):
+    for contour in contours:
         area = cv2.contourArea(contour)
         if (area > 300):
             x, y, w, h = cv2.boundingRect(contour)
@@ -58,7 +58,7 @@ while (1):
     contours, hierarchy = cv2.findContours(blue_mask,
                                            cv2.RETR_TREE,
                                            cv2.CHAIN_APPROX_SIMPLE)
-    for pic, contour in enumerate(contours):
+    for contour in contours:
         area = cv2.contourArea(contour)
         if (area > 300):
             x, y, w, h = cv2.boundingRect(contour)

@@ -41,10 +41,10 @@ keys = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
 
 buttonList = []
 for i in range(len(keys)):
-    for j, key in enumerate(keys[i]):
-        buttonList.append(Button([100 * j + 50, 100 * i + 50], key))
-
-
+    buttonList.extend(
+        Button([100 * j + 50, 100 * i + 50], key)
+        for j, key in enumerate(keys[i])
+    )
 
 while True:
     res, img = cap.read()
